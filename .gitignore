@@ -1,2 +1,2 @@
-node_modules
-nodejs/test/node_modules
+/.idea
+/nodejs/test/node_modules
