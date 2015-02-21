@@ -6,12 +6,11 @@
     "omegascorp <omegascorp@gmail.com>"
   ],
   "description": "Armenian orthography converter",
-  "main": "mashtots.js",
+  "main": "src/mashtots.js",
   "license": "GNU GPL v3",
   "ignore": [
     "LICENSE",
     "README.md",
-    "bower.json",
     "nodejs"
   ]
 }
