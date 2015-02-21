@@ -11,6 +11,7 @@
   "ignore": [
     "LICENSE",
     "README.md",
+    "bower.json",
     "nodejs"
   ]
 }
