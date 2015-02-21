@@ -1,0 +1,16 @@
+{
+  "name": "armenian-orthography-converter",
+  "version": "1.0.0",
+  "homepage": "https://github.com/instigatetcf/armenian-orthography-converter",
+  "authors": [
+    "omegascorp <omegascorp@gmail.com>"
+  ],
+  "description": "Armenian orthography converter",
+  "main": "mashtots.js",
+  "license": "GNU GPL v3",
+  "ignore": [
+    "LICENSE",
+    "README.md",
+    "nodejs"
+  ]
+}
