@@ -1919,7 +1919,7 @@ module.exports = [
 {"modern":"ներկայացած", "traditional": "ներկայացած"},
 {"modern":"ներկայացնելը", "traditional": "ներկայացնելը"},
 {"modern":"ներկայացնեն", "traditional": "ներկայացնեն"},
-{"modern":"ներկայացուի", "traditional": "ներկայացուի"},
+{"modern":"ներկայացվի", "traditional": "ներկայացուի"},
 {"modern":"ներկայացումներին", "traditional": "ներկայացումներին"},
 {"modern":"ներկայացուցիչն", "traditional": "ներկայացուցիչն"},
 {"modern":"ներկայացուցչական", "traditional": "ներկայացուցչական"},
