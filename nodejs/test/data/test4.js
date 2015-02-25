@@ -1776,7 +1776,7 @@ module.exports = [
 {"modern":"յուղանկար", "traditional": "իւղանկար"},
 {"modern":"յուղափայլ", "traditional": "իւղափայլ"},
 {"modern":"յուղոտ", "traditional": "իւղոտ"},
-{"modern":"յունաստանի", "traditional": "յունաստանի"},
+{"modern":"հունաստանի", "traditional": "յունաստանի"},
 {"modern":"յուրահատկություն", "traditional": "իւրայատկութիւն"},
 {"modern":"յուրայիններին", "traditional": "իւրայիններին"},
 {"modern":"յուրացման", "traditional": "իւրացման"},
