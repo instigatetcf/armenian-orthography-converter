@@ -1,4 +1,4 @@
-var mashtots = require(__dirname + '/../../mashtots.js');
+var mashtots = require(__dirname + '/../../src/mashtots.js');
 
 var correct;
 var incorrect;
