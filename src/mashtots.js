@@ -339,85 +339,53 @@
         ['յամբ', 'եամբ'], ['միքայել', 'միքայէլ']
     ];
 
-    function toMashtots(text) {
-        // word parts that have no rules
-        for (var i in wordsParts) {
-            var rep_soviet0 = new RegExp(wordsParts[i][0], 'g');
-            text = text.replace(rep_soviet0, wordsParts[i][1]);
+    function replace(text, expression, replacement, isShowPath) {
+        var temp;
+        temp = text;
+        text = text.replace(new RegExp(expression, 'g'), replacement);
+        if (isShowPath) {
+            console.log(temp + '->' + text + ' (' + expression + ')');
         }
+        return text;
+    }
+
+    function toMashtots(text, isShowPath) {
+        var i, length, expression, replacement;
+
+        if (typeof isShowPath !== 'boolean') {
+            isShowPath = false;
+        }
+
+        // word parts that have no rules
+        for (i = 0, length = wordsParts.length; i < length; i++) {
+            expression = wordsParts[i][0];
+            replacement = wordsParts[i][1];
+            text = replace(text, expression, replacement, isShowPath);
+        }
+
         // main spelling
-        for (var i in data) {
-            var rep_soviet = new RegExp(data[i][0], 'g');
-            text = text.replace(rep_soviet, data[i][1]);
+        for (i = 0, length = data.length; i < length; i++) {
+            expression = data[i][0];
+            replacement = data[i][1];
+            text = replace(text, expression, replacement, isShowPath);
         }
         // for mistakes in the word make right
-        for (var i in errorCorrectionSovietToMashtotsInTheWord) {
-            var exp = errorCorrectionSovietToMashtotsInTheWord[i][0];
-            var rep = errorCorrectionSovietToMashtotsInTheWord[i][1];
-            var rep_soviet1 = new RegExp(exp, 'g');
-            text = text.replace(rep_soviet1, rep);
+        for (i = 0, length = errorCorrectionSovietToMashtotsInTheWord.length; i < length; i++) {
+            expression = errorCorrectionSovietToMashtotsInTheWord[i][0];
+            replacement = errorCorrectionSovietToMashtotsInTheWord[i][1];
+            text = replace(text, expression, replacement, isShowPath);
         }
         // for mistakes make right
-        for (var i in errorCorrectionSovietToMashtots) {
-            var exp = '(' + start + ')';
-            exp += errorCorrectionSovietToMashtots[i][0];
-            exp += '(' + end + ')';
-            var rep = '$1' + errorCorrectionSovietToMashtots[i][1] + '$2';
-            var rep_soviet1 = new RegExp(exp, 'g');
-            text = text.replace(rep_soviet1, rep);
+        for (i = 0, length = errorCorrectionSovietToMashtots.length; i < length; i++) {
+            expression = '(' + start + ')';
+            expression += errorCorrectionSovietToMashtots[i][0];
+            expression += '(' + end + ')';
+            replacement = '$1' + errorCorrectionSovietToMashtots[i][1] + '$2';
+            text = replace(text, expression, replacement, isShowPath);
         }
 
         return text;
     }
-
-    function toMashtotsTest(text){
-        var temp, i;
-        // word parts that have no rules
-        for (i in wordsParts) {
-            var rep_soviet0 = new RegExp(wordsParts[i][0], 'g');
-            temp = text;
-            text = text.replace(rep_soviet0, wordsParts[i][1]);
-            if(text !== temp){
-                console.log(temp + '->' + text + ' (' + wordsParts[i][0] + ')');
-            }
-        }
-        // main spelling
-        for (i in data) {
-            var rep_soviet = new RegExp(data[i][0], 'g');
-            temp = text;
-            text = text.replace(rep_soviet, data[i][1]);
-            if(text !== temp){
-                console.log(temp + '->' + text + ' (' + data[i][0] + ')');
-            }
-        }
-        // for mistakes in the word make right
-        for (i in errorCorrectionSovietToMashtotsInTheWord) {
-            var exp = errorCorrectionSovietToMashtotsInTheWord[i][0];
-            var rep = errorCorrectionSovietToMashtotsInTheWord[i][1];
-            var rep_soviet1 = new RegExp(exp, 'g');
-            temp = text;
-            text = text.replace(rep_soviet1, rep);
-            if(text !== temp){
-                console.log(temp + '->' + text + ' (' + errorCorrectionSovietToMashtotsInTheWord[i][0] + ')');
-            }
-        }
-        // for mistakes make right
-        for (i in errorCorrectionSovietToMashtots) {
-            var exp = '(' + start + ')';
-            exp += errorCorrectionSovietToMashtots[i][0];
-            exp += '(' + end + ')';
-            var rep = '$1' + errorCorrectionSovietToMashtots[i][1] + '$2';
-            var rep_soviet1 = new RegExp(exp, 'g');
-            temp = text;
-            text = text.replace(rep_soviet1, rep);
-            if(text !== temp){
-                console.log(temp + '->' + text + ' (' + errorCorrectionSovietToMashtots[i][0] + ')');
-            }
-        }
-
-        return text;
-    }
-
 
     /*
      Note: the reverse conversion is done in reverse order
@@ -425,75 +393,37 @@
      side-effect, so order matters, and it needs to be
      reversed in the reverse conversion
      */
-    function toSoviet(text){
-        for (var i in wordsParts) {
-            var rep_mashtots0 = new RegExp(wordsParts[i][1], 'g');
-            text = text.replace(rep_mashtots0, wordsParts[i][0]);
-        }
-        var k = data.length-1;
-        for (var i in data) {
-            var rep_mashtots = new RegExp(data[k-i][2], 'g');
-            text = text.replace(rep_mashtots, data[k-i][3]);
-        }
-        // for mistakes in the word make right
-        for (var i in errorCorrectionMashtotsToSovietInTheWord) {
-            var exp = errorCorrectionMashtotsToSovietInTheWord[i][0];
-            var rep = errorCorrectionMashtotsToSovietInTheWord[i][1];
-            var rep_soviet1 = new RegExp(exp, 'g');
-            text = text.replace(rep_soviet1, rep);
-        }
-        for (var i in errorCorrectionMashtotsToSoviet) {
-            var exp = '(' + start + ')';
-            exp += errorCorrectionMashtotsToSoviet[i][0];
-            exp += '(' + end + ')';
-            var rep = '$1' + errorCorrectionMashtotsToSoviet[i][1] + '$2';
-            var rep_soviet1 = new RegExp(exp, 'g');
-            text = text.replace(rep_soviet1, rep);
-        }
-        return text;
-    }
+    function toSoviet(text, isShowPath) {
+        var i, length, expression, replacement;
 
-    function toSovietTest(text){
-        var temp;
-        for (var i in wordsParts) {
-            var rep_mashtots0 = new RegExp(wordsParts[i][1], 'g');
-            temp = text;
-            text = text.replace(rep_mashtots0, wordsParts[i][0]);
-            if(text !== temp){
-                console.log(temp + '->' + text + ' (' + wordsParts[i][1] + ')');
-            }
+        if (typeof isShowPath !== 'boolean') {
+            isShowPath = false;
         }
-        var k = data.length - 1;
-        for (var i in data) {
-            var rep_mashtots = new RegExp(data[k-i][2], 'g');
-            temp = text;
-            text = text.replace(rep_mashtots, data[k-i][3]);
-            if(text !== temp){
-                console.log(temp + '->' + text + ' (' + data[k-i][2] + ')');
-            }
+
+        for (i = 0, length = wordsParts.length; i < length; i++) {
+            expression = wordsParts[i][1];
+            replacement = wordsParts[i][0];
+            text = replace(text, expression, replacement, isShowPath);
+        }
+
+        for (i = data.length - 1; i >= 0; i--) {
+            expression = data[i][2];
+            replacement = data[i][3];
+            text = replace(text, expression, replacement, isShowPath);
         }
         // for mistakes in the word make right
-        for (var i in errorCorrectionMashtotsToSovietInTheWord) {
-            var exp = errorCorrectionMashtotsToSovietInTheWord[i][0];
-            var rep = errorCorrectionMashtotsToSovietInTheWord[i][1];
-            var rep_soviet1 = new RegExp(exp, 'g');
-            temp = text;
-            text = text.replace(rep_soviet1, rep);
-            if(text !== temp){
-                console.log(temp + '->' + text + ' (' + errorCorrectionMashtotsToSovietInTheWord[i][0] + ')');
-            }
+        for (i = 0, length = errorCorrectionMashtotsToSovietInTheWord.length; i < length; i++) {
+            expression = errorCorrectionMashtotsToSovietInTheWord[i][0];
+            replacement = errorCorrectionMashtotsToSovietInTheWord[i][1];
+            text = replace(text, expression, replacement, isShowPath);
         }
-        for (var i in errorCorrectionMashtotsToSoviet) {
-            var exp = '(' + start + ')';
-            exp += errorCorrectionMashtotsToSoviet[i][0];
-            exp += '(' + end + ')';
-            var rep = '$1' + errorCorrectionMashtotsToSoviet[i][1] + '$2';
-            var rep_soviet1 = new RegExp(exp, 'g');
-            temp = text;
-            text = text.replace(rep_soviet1, rep);
-            if(text !== temp){
-                console.log(temp + '->' + text + ' (' + errorCorrectionMashtotsToSoviet[i][0] + ')');
-            }
+
+        for (i = 0, length = errorCorrectionMashtotsToSoviet.length; i < length; i++) {
+            expression = '(' + start + ')';
+            expression += errorCorrectionMashtotsToSoviet[i][0];
+            expression += '(' + end + ')';
+            replacement = '$1' + errorCorrectionMashtotsToSoviet[i][1] + '$2';
+            text = replace(text, expression, replacement, isShowPath);
         }
         return text;
     }
@@ -503,6 +433,4 @@
      */
     global.toMashtots = toMashtots;
     global.toSoviet = toSoviet;
-    global.toMashtotsTest = toMashtotsTest;
-    global.toSovietTest = toSovietTest;
-}(this));
+}(typeof window === 'object' ? window : exports));

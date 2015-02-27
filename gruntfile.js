@@ -8,7 +8,12 @@ module.exports = function (grunt) {
             ],
             directives: {
                 browser: true,
-                todo: true
+                todo: true,
+                plusplus: true,
+                predef: [
+                    'console',
+                    'exports'
+                ]
             }
         }
     };
