@@ -1,0 +1,16 @@
+{
+  "name": "mashtots-test",
+  "version": "0.0.0",
+  "description": "",
+  "main": "test/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-jslint": "^1.1.12",
+    "mongodb": "^1.4.29"
+  }
+}
