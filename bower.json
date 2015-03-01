@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "homepage": "https://github.com/instigatetcf/armenian-orthography-converter",
   "authors": [
-    "omegascorp <omegascorp@gmail.com>"
+    "Osip <osipov.osip@gmail.com> (https://github.com/osix)",
+    "omegascorp <omegascorp@gmail.com> (https://github.com/omegascorp)"
   ],
   "description": "Armenian orthography converter",
   "main": "src/mashtots.js",
   "license": "GNU GPL v3",
   "ignore": [
+    "node_modules",
+    "test",
+    ".gitignore",
+    "gruntfile.js",
     "LICENSE",
-    "README.md",
-    "nodejs"
+    "package.json",
+    "README.md"
   ]
 }
