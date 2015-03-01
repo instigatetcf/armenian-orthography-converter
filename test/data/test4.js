@@ -1512,7 +1512,7 @@ module.exports = [
 {"modern":"մեքենավարի", "traditional": "մեքենավարի"},
 {"modern":"մզել", "traditional": "մզել"},
 {"modern":"մզում", "traditional": "մզում"},
-{"modern":"մէկն", "traditional": "մէկն"},
+{"modern":"մեկն", "traditional": "մէկն"},
 {"modern":"մըռթմըռթալ", "traditional": "մըռթմըռթալ"},
 {"modern":"մթախառն", "traditional": "մթախառն"},
 {"modern":"մթապատել", "traditional": "մթապատել"},
