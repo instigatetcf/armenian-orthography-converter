@@ -10,7 +10,6 @@
   "main": "src/mashtots.js",
   "license": "GNU GPL v3",
   "ignore": [
-    "node_modules",
     "test",
     ".gitignore",
     "gruntfile.js",
