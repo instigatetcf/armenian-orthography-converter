@@ -959,7 +959,7 @@ module.exports = [
 {"modern":"ձեռակերտ", "traditional": "ձեռակերտ"},
 {"modern":"ձեռարվեստ", "traditional": "ձեռարուեստ"},
 {"modern":"ձեռնադաշնակ", "traditional": "ձեռնադաշնակ"},
-{"modern":"ձեռնաթեւավորներ", "traditional": "ձեռնաթեւաւորներ"},
+{"modern":"ձեռնաթևավորներ", "traditional": "ձեռնաթեւաւորներ"},
 {"modern":"ձեռնածություն", "traditional": "ձեռնածութիւն"},
 {"modern":"ձեռնաղաց", "traditional": "ձեռնաղաց"},
 {"modern":"ձեռնաշաղափ", "traditional": "ձեռնաշաղափ"},
