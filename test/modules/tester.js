@@ -36,8 +36,8 @@ function check(word){
         isCorrect,
         logString, tabsCount;
     tabsCount = 6;
-    sovietWord = mashtots.toSoviet(word.traditional);
-    mashtotsWord = mashtots.toMashtots(word.modern);
+    sovietWord = mashtots.mashtotsToSoviet(word.traditional);
+    mashtotsWord = mashtots.sovietToMashtots(word.modern);
 
     isSovietWord = (sovietWord === word.modern);
     isMashtotsWord = (mashtotsWord === word.traditional);
@@ -84,8 +84,8 @@ function getTime(){
     return time;
 }
 
-module.exports.startTest = startTest;
-module.exports.endTest = endTest;
-module.exports.check = check;
-module.exports.test = test;
-module.exports.getTime = getTime;
+exports.startTest = startTest;
+exports.endTest = endTest;
+exports.check = check;
+exports.test = test;
+exports.getTime = getTime;

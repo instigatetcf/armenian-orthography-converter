@@ -9,11 +9,24 @@ module.exports = function (grunt) {
             ],
             directives: {
                 browser: true,
+                devel: true,
                 todo: true,
                 plusplus: true,
                 predef: [
-                    'console',
-                    'exports'
+                    // for nodejs
+                    'exports',
+
+                    // for browser
+                    'HTMLIFrameElement',
+                    'Text',
+                    'Comment',
+                    'Window',
+
+                    // specific globals
+                    'mashtots',
+
+                    // skip indirect recursion
+                    'replaceInDom'
                 ]
             }
         }

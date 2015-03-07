@@ -2,14 +2,14 @@
  *  Armenian Orthography Converter 2.0.6
  */
 
-(function (global) {
+(function (window, exports) {
     'use strict';
 
     var vowel, sonant, alphabet, alphabetWithoutH, alphabetWithoutAOJ,
         end, start, data,
         errorCorrectionSovietToMashtots, errorCorrectionSovietToMashtotsInTheWord,
         errorCorrectionMashtotsToSovietInTheWord, errorCorrectionMashtotsToSoviet,
-        wordsParts;
+        wordsParts, mashtots;
 
     vowel = 'ԱԵԷԸԻՈՕաեիէըոօ';
     sonant = 'ԲԳԴԶԹԺԼԽԾԿՀՁՂՃՄՅՆՇՉՊՋՌՍՎՏՐՑՓՔՖբգդզթժլխծկհձղճմյնշչպջռսվտրցւփքֆ';
@@ -356,7 +356,7 @@
         return text;
     }
 
-    function toMashtots(text, isShowPath) {
+    function sovietToMashtots(text, isShowPath) {
         var i, length, expression, replacement;
 
         if (typeof isShowPath !== 'boolean') {
@@ -400,7 +400,7 @@
      side-effect, so order matters, and it needs to be
      reversed in the reverse conversion
      */
-    function toSoviet(text, isShowPath) {
+    function mashtotsToSoviet(text, isShowPath) {
         var i, length, expression, replacement;
 
         if (typeof isShowPath !== 'boolean') {
@@ -436,8 +436,17 @@
     }
 
     /*
+     * Export for Browser or Node
+     */
+    if (window !== null) {
+        mashtots = window.mashtots = {};
+    } else {
+        mashtots = exports;
+    }
+
+    /*
      * Public methods
      */
-    global.toMashtots = toMashtots;
-    global.toSoviet = toSoviet;
-}(typeof window === 'object' ? window : exports));
+    mashtots.sovietToMashtots = sovietToMashtots;
+    mashtots.mashtotsToSoviet = mashtotsToSoviet;
+}(typeof window === 'object' ? window : null, typeof exports === 'object' ? exports : null));
