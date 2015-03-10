@@ -596,7 +596,7 @@ module.exports = [
     {"modern":"հրապարակով", "traditional": "հրապարակով"},
     {"modern":"հրատարակված", "traditional": "հրատարակուած"},
     {"modern":"հրեշտակապետական", "traditional": "հրեշտակապետական"},
-    {"modern":"հօրս", "traditional": "հօրս"},
+    {"modern":"հորս", "traditional": "հօրս"},
     {"modern":"ձայնախոսություն", "traditional": "ձայնախօսութիւն"},
     {"modern":"ձայնս", "traditional": "ձայնս"},
     {"modern":"ձեղնագործություն", "traditional": "ձեղնագործութիւն"},
