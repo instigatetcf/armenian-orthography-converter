@@ -80,7 +80,7 @@ module.exports = [
 {"modern":"համադամ", "traditional": "համադամ"},
 {"modern":"համադավան", "traditional": "համադաւան"},
 {"modern":"համադրելիություն", "traditional": "համադրելիութիւն"},
-{"modern":"համաեվրոպական", "traditional": "համաեւրոպական"},
+{"modern":"համաևրոպական", "traditional": "համաեւրոպական"},
 {"modern":"համազգեստ", "traditional": "համազգեստ"},
 {"modern":"համազորություն", "traditional": "համազօրութիւն"},
 {"modern":"համաժամություն", "traditional": "համաժամութիւն"},
