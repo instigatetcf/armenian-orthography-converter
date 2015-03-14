@@ -2203,7 +2203,7 @@ module.exports = [
     {"modern":"կչկչոց", "traditional": "կչկչոց"},
     {"modern":"կպահես", "traditional": "կը-պահես"},
     {"modern":"կպաշտպանի", "traditional": "կը-պաշտպանի"},
-    {"modern":"կպարզենք-կը", "traditional": "պարզենք"},
+    {"modern":"կպարզենք", "traditional": "կը-պարզենք"},
     {"modern":"կպչի", "traditional": "կպչի"},
     {"modern":"կպրագործ", "traditional": "կպրագործ"},
     {"modern":"կպրային", "traditional": "կպրային"},
