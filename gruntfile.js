@@ -5,17 +5,18 @@ module.exports = function (grunt) {
     var jslint = {
         client: {
             src: [
+                'test/*.js',
+                'test/modules/*.js',
                 'src/*.js'
             ],
             directives: {
+                node: true,
                 browser: true,
                 devel: true,
                 todo: true,
                 plusplus: true,
+                nomen: true,
                 predef: [
-                    // for nodejs
-                    'exports',
-
                     // for browser
                     'HTMLIFrameElement',
                     'Text',

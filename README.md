@@ -8,7 +8,11 @@ Grub the source and run in console
 
 ## Run tests
 
-Use following command to run test
+Use following command to run all tests
+
+    node test/index.js
+
+Use following command to run single test
 
     node test/index.js #
 
