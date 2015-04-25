@@ -1,20 +1,20 @@
 {
-  "name": "armenian-orthography-converter",
-  "version": "1.0.0",
-  "homepage": "https://github.com/instigatetcf/armenian-orthography-converter",
-  "authors": [
-    "Osip <osipov.osip@gmail.com> (https://github.com/osix)",
-    "omegascorp <omegascorp@gmail.com> (https://github.com/omegascorp)"
-  ],
-  "description": "Armenian orthography converter",
-  "main": "src/mashtots.js",
-  "license": "GNU GPL v3",
-  "ignore": [
-    "test",
-    ".gitignore",
-    "gruntfile.js",
-    "LICENSE",
-    "package.json",
-    "README.md"
-  ]
+    "name": "armenian-orthography-converter",
+    "version": "1.0.0",
+    "homepage": "https://github.com/instigatetcf/armenian-orthography-converter",
+    "authors": [
+        "Osip <osipov.osip@gmail.com> (https://github.com/osix)",
+        "omegascorp <omegascorp@gmail.com> (https://github.com/omegascorp)"
+    ],
+    "description": "Armenian orthography converter",
+    "main": "src/mashtots.js",
+    "license": "GNU GPL v3",
+    "ignore": [
+        "test",
+        ".gitignore",
+        "gruntfile.js",
+        "LICENSE",
+        "package.json",
+        "README.md"
+    ]
 }
