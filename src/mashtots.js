@@ -521,4 +521,5 @@
      */
     mashtots.sovietToMashtots = sovietToMashtots;
     mashtots.mashtotsToSoviet = mashtotsToSoviet;
+    mashtots.replace = replace;
 }(typeof window === 'object' ? window : null, typeof exports === 'object' ? exports : null));
