@@ -102,18 +102,18 @@
         }
     }
 
-    function toMashtotsDom(element, exeptions, filters) {
+    function sovietToMashtotsDom(element, exeptions, filters) {
         replaceInDom(element, exeptions, filters, function (text) {
-            window.toMashtots(text);
+            window.sovietToMashtots(text);
         });
     }
 
-    function toSovietDom(element, exeptions, filters) {
+    function mashtotsToSovietDom(element, exeptions, filters) {
         replaceInDom(element, exeptions, filters, function (text) {
-            window.toSoviet(text);
+            window.mashtotsToSovietDom(text);
         });
     }
 
-    window.mashtots.sovietToMashtotsDom = toMashtotsDom;
-    window.mashtots.mashtotsToSovietDom = toSovietDom;
+    window.mashtots.sovietToMashtotsDom = sovietToMashtotsDom;
+    window.mashtots.mashtotsToSovietDom = mashtotsToSovietDom;
 }(window));
