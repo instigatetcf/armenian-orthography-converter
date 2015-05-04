@@ -31,3 +31,13 @@ Type can be **s** for Soviet orthography and **m** for traditional orthography.
 Example:
 
     node test/word.js s միեւնոյն
+
+## Grunt tasks
+
+Use following command to check code quality
+
+    grunt tslit
+
+Use following command to build project (it will create dest/mashtots.min.js file)
+
+    grunt build
