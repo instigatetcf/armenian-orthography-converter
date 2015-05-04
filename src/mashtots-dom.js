@@ -103,13 +103,13 @@
 
     function sovietToMashtotsDom(element, exeptions, filters) {
         replaceInDom(element, exeptions, filters, function (text) {
-            window.mashtots.sovietToMashtots(text);
+            return window.mashtots.sovietToMashtots(text);
         });
     }
 
     function mashtotsToSovietDom(element, exeptions, filters) {
         replaceInDom(element, exeptions, filters, function (text) {
-            window.mashtots.mashtotsToSovietDom(text);
+            return window.mashtots.mashtotsToSovietDom(text);
         });
     }
 
