@@ -109,7 +109,7 @@
 
     function mashtotsToSovietDom(element, exeptions, filters) {
         replaceInDom(element, exeptions, filters, function (text) {
-            return window.mashtots.mashtotsToSovietDom(text);
+            return window.mashtots.mashtotsToSoviet(text);
         });
     }
 
