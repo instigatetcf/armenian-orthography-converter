@@ -19,7 +19,6 @@
         return false;
     }
 
-
     function replaceInDomTimeout(element, exeptions, filters, callback, attributes) {
         setTimeout(function () {
             replaceInDom(element, exeptions, filters, callback, attributes);
@@ -104,13 +103,13 @@
 
     function sovietToMashtotsDom(element, exeptions, filters) {
         replaceInDom(element, exeptions, filters, function (text) {
-            window.sovietToMashtots(text);
+            window.mashtots.sovietToMashtots(text);
         });
     }
 
     function mashtotsToSovietDom(element, exeptions, filters) {
         replaceInDom(element, exeptions, filters, function (text) {
-            window.mashtotsToSovietDom(text);
+            window.mashtots.mashtotsToSovietDom(text);
         });
     }
 
