@@ -1,5 +1,7 @@
 # Armenian orthography converter
 
+[![Bower version](https://badge.fury.io/bo/amazeui.svg)](http://badge.fury.io/bo/amazeui)
+
 ## Set up
 
 Grub the source and run in console
