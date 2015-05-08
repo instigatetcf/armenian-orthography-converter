@@ -1,6 +1,6 @@
 # Armenian orthography converter
 
-[![Bower version](https://badge.fury.io/bo/amazeui.svg)](http://badge.fury.io/bo/amazeui)
+[![Bower](https://img.shields.io/bower/v/bootstrap.svg?style=flat-square)](https://github.com/instigatetcf/armenian-orthography-converter/)
 
 ## Set up
 
