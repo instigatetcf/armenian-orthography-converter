@@ -4,9 +4,13 @@
 
 ## Set up
 
-Grub the source and run in console
+Use following command to load node packajes
 
     npm install
+
+## Install
+
+    bower install armenian-orthography-converter
 
 ## Run tests
 
