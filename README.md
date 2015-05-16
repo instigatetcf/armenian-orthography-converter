@@ -1,10 +1,17 @@
 # Armenian orthography converter
 
+[![Bower](https://img.shields.io/bower/v/armenian-orthography-converter.svg?style=flat-square)](https://github.com/instigatetcf/armenian-orthography-converter/)
+[![License](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat-square)](https://github.com/instigatetcf/armenian-orthography-converter/blob/master/LICENSE)
+
 ## Set up
 
-Grub the source and run in console
+Use following command to load node packajes
 
     npm install
+
+## Install
+
+    bower install armenian-orthography-converter
 
 ## Run tests
 
