@@ -3,7 +3,6 @@
 var fs = require('fs');
 
 var tester = require(__dirname + '/modules/tester.js');
-var mongodb = require('mongodb');
 
 var testNumber = process.argv[2];
 var logLevel = process.argv[3] === 'log' ? 2 : 1;
