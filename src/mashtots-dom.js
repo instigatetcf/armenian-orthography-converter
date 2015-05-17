@@ -29,6 +29,9 @@
     function replaceInDom(element, exeptions, filters, callback, attributes) {
         var i, filter, attrs, findedElements, findedElement, attribute, elementAttribute,
             title, alt, value, doc, node;
+        if (typeof element === 'string') {
+            return callback(element);
+        }
         if (typeof filters === 'object' && filters !== null) {
             for (filter in filters) {
                 if (filters.hasOwnProperty(filter)) {
@@ -66,10 +69,10 @@
         title = element.getAttribute('title');
         alt = element.getAttribute('alt');
         value = element.value;
-        if (title !== null) {
+        if (typeof title === 'string') {
             element.setAttribute('title', callback(title));
         }
-        if (alt !== null) {
+        if (typeof alt === 'string') {
             element.setAttribute('alt', callback(alt));
         }
         if (typeof value === 'string') {

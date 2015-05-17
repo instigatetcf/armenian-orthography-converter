@@ -1,5 +1,5 @@
 /*
- *  Armenian Orthography Converter 2.0.6
+ *  Armenian Orthography Converter 2.0.7
  */
 
 (function (window, exports) {
