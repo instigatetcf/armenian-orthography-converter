@@ -25,6 +25,34 @@
         }, 0);
     }
 
+    function replaceWithExeptions(text, exeptions, callback) {
+        var footnotes = [],
+            regexp,
+            matches,
+            j,
+            k;
+        for (j = 0; j < exeptions.length; j++) {
+            regexp = new RegExp(exeptions[j], 'gm');
+            matches = text.match(regexp);
+            if (matches) {
+                for (k = 0; k < matches.length; k++) {
+                    text = text.replace(matches[k], '#' + j + '#' + k + '#');
+                }
+            }
+        }
+        text = callback(text);
+        if (footnotes.length) {
+            for (j = 0; j < footnotes.length; j++) {
+                if (footnotes[j] !== null) {
+                    for (k = 0; k < footnotes[j].length; k++) {
+                        text = text.replace('#' + j + '#' + k + '#', footnotes[j][k]);
+                    }
+                }
+            }
+        }
+        return text;
+    }
+
     // TODO: method is too big, separate it
     function replaceInDom(element, exeptions, filters, callback, attributes) {
         var i, filter, attrs, findedElements, findedElement, attribute, elementAttribute,
@@ -94,7 +122,8 @@
             node = element.childNodes[i];
             if (node instanceof Text) {
                 if (typeof exeptions === 'object') {
-                    node.data = mashtots.replace(node.data, exeptions, callback);
+                    console.log(node.data);
+                    node.data = replaceWithExeptions(node.data, exeptions, callback);
                 } else {
                     node.data = callback(node.data);
                 }
@@ -116,6 +145,7 @@
         });
     }
 
+    window.mashtots.exeptions = [];
     window.mashtots.sovietToMashtotsDom = sovietToMashtotsDom;
     window.mashtots.mashtotsToSovietDom = mashtotsToSovietDom;
 }(window));
