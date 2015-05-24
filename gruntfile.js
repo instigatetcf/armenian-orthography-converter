@@ -19,6 +19,7 @@ module.exports = function (grunt) {
                 predef: [
                     // for browser
                     'HTMLIFrameElement',
+                    'HTMLTextAreaElement',
                     'Text',
                     'Comment',
                     'Window',
